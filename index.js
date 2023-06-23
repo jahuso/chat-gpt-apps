@@ -1,4 +1,3 @@
-const express = require("express");
 const { OpenAIClient, AzureKeyCredential } = require("@azure/openai");
 require("dotenv").config();
 const endpoint = process.env["AZURE_OPENAI_ENDPOINT"] ;
@@ -12,6 +11,7 @@ async function main() {
 
   const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
   //const {choices} = await client.getCompletions(deploymentId, prompt);
+
 
   const response = await client.getCompletions(deploymentId,prompt);
 
